@@ -1,3 +1,5 @@
+
+
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -10,14 +12,13 @@ public class BankLoginTest {
         SQLHelper.cleanAuthCodes();}
 
     @AfterAll
-    static void tearDownAll() {cleanDatabase();}
+    static void tearDownAll() {
+        SQLHelper.cleanDatabase();}
 
-    private static void cleanDatabase() {
-    }
 
     @BeforeEach
     void setUp() {
-        var LoginPage = open ("http://localhost:8080", LoginPage.class);}
+        loginPage = open ("http://localhost:8080", LoginPage.class);}
 
     @Test
     @DisplayName ("Should successfully login to dashboard with exist login and password from sut test data")
