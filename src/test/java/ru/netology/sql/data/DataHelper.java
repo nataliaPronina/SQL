@@ -1,3 +1,5 @@
+package ru.netology.sql.data;
+
 import com.github.javafaker.Faker;
 import lombok.Value;
 
@@ -10,7 +12,7 @@ public class DataHelper {
 
     }
 
-    static AuthInfo getAuthInfoWithTestData() {
+    public static AuthInfo getAuthInfoWithTestData() {
         return new AuthInfo("vasya", "qwerty123");
     }
 
@@ -36,15 +38,8 @@ public class DataHelper {
         String password;
     }
 
+    @Value
     public static class VerificationCode {
-        String code;
-
-        public VerificationCode(String code) {
-        }
-
-        public String getCode() {
-            return code;
-        }
-    }
+        String code;}
 
 }

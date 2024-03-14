@@ -1,6 +1,9 @@
-
+package ru.netology.sql.test;
 
 import org.junit.jupiter.api.*;
+import ru.netology.sql.data.DataHelper;
+import ru.netology.sql.data.SQLHelper;
+import ru.netology.sql.page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 

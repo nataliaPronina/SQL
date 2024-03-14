@@ -1,6 +1,9 @@
+package ru.netology.sql.data;
+
 import lombok.SneakyThrows;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import ru.netology.sql.data.DataHelper;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +20,7 @@ public class SQLHelper {
 
     @SneakyThrows
     public static DataHelper.VerificationCode getVerificationCode() {
-        var codeSQL = "SELECT code FROM auth_codes ORDER BY created DESK LIMIT 1";
+        var codeSQL = "SELECT code FROM auth_codes";
         var conn = getConn();
         var code = runner.query(conn, codeSQL, new ScalarHandler<String>());
         return new DataHelper.VerificationCode (code);
