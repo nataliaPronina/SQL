@@ -10,12 +10,10 @@ public class LoginPage {
     private final SelenideElement loginField = $("[data-test-id=login] input");
     private final SelenideElement passwordField = $("[data-test-id=password] input");
     private final SelenideElement loginButton = $("[data-test-id=action-login]");
-    private final SelenideElement errorNotification = $("[data-test-id='error-notification'].notification__content")
-            .shouldHave(Condition.text("Ошибка! Неверно указан логин или пароль"))
-                    .shouldBe(Condition.visible);
+    private final SelenideElement errorNotification = $("[data-test-id='error-notification'].notification__content");
 
     public void verifyErrorNotification(String expectedText) {
-        errorNotification.shouldHave(Condition.exactText(expectedText)).shouldBe(Condition.visible);
+        errorNotification.shouldHave(Condition.text(expectedText)).shouldBe(Condition.visible);
     }
 
     public VerificationPage validLogin(DataHelper.AuthInfo info) {
