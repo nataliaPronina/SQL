@@ -13,7 +13,7 @@ public class DataHelper {
     }
 
     public static AuthInfo getAuthInfoWithTestData() {
-        return new AuthInfo("vasya", "hhgv.jhvhj.__1445");
+        return new AuthInfo("vasya", "qwerty123");
     }
 
     private static String generateRandomLogin() {
